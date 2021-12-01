@@ -26,7 +26,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Please leave any suggestions and comments here: <https://github.com/RELIANCE-EOSC/reliance-ro-crate/issues>
 
-_RELIANCE RO-Crates_ are a specialization of [_RO-Crate_](https://researchobject.github.io/ro-crate/) for packaging data cubes to access Earth observation data along all the necessary and related artifacts like documentation, images, related infrastructures, etc.  
+_RELIANCE RO-Crates_ are a specialization of [_RO-Crate_](https://researchobject.github.io/ro-crate/) for packaging data cubes enabling access earth observation data, along with all the necessary and other related artifacts like documentation, images, related infrastructures, etc.  
 
 RELIANCE project uses _RELIANCE RO-Crates_ as an exchange format to package data cubes in Earth Science.
 
