@@ -1,13 +1,13 @@
 theme: jekyll-theme-minimal
 #markdown: CommonMarkGhPages
 title: RELIANCE project
-email: info@reliance-project.eu
-description: > # this means to ignore newlines until "baseurl:" 
-  Helping to realize the vision of FAIR research in EOSC 
+#email: info@reliance-project.eu
+#description: > # this means to ignore newlines until "baseurl:" 
+#  Helping to realize the vision of FAIR research in EOSC 
 #baseurl: "" # the subpath of your site, e.g. /blog
 #url: "https://about.workflowhub.eu" # the base hostname & protocol for your site
 #github_username:  RELIANCE-EOSC
 #encoding: UTF-8
 #permalink: pretty
 
-logo: logo/Reliance-logo.png
+#logo: logo/Reliance-logo.png
