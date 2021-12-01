@@ -10,14 +10,15 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
   - Raul Palma <https://orcid.org/0000-0003-4289-4922>
 * Title: RELIANCE RO-Crate profile
 * Publisher: [RELIANCE project](https://reliance-project.eu/)
-<!---* Permalink: <https://w3id.org/workflowhub/workflow-ro-crate/1.0> (this version)  
-  <https://w3id.org/workflowhub/workflow-ro-crate/> (latest version)
--->
 * Version: [1.0]
-<!---* [Profile Crate `ro-crate-metadata.json`](ro-crate-metadata.json)
-  - [Profile Crate preview](ro-crate-preview.html)
-* [Example RO-Crate `ro-crate-metadata.json`](example/ro-crate-metadata.json)
-  - [Example RO-Crate profile preview](example/ro-crate-preview.html)
+<!--- 
+  Permalink: <https://w3id.org/workflowhub/workflow-ro-crate/1.0> (this version)  
+  <https://w3id.org/workflowhub/workflow-ro-crate/> (latest version)
+
+  [Profile Crate `ro-crate-metadata.json`](ro-crate-metadata.json)
+    [Profile Crate preview](ro-crate-preview.html)
+  [Example RO-Crate `ro-crate-metadata.json`](example/ro-crate-metadata.json)
+    [Example RO-Crate profile preview](example/ro-crate-preview.html)
 -->
 
 Please leave any suggestions and comments here: <https://github.com/RELIANCE-EOSC/reliance-ro-crate/issues>
