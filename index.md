@@ -6,11 +6,14 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 * Authors:
   - Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
-  - Esteban Gonzalez 
+  - Esteban Gonzalez
+  - Daniel Garijo 
   - Raul Palma <https://orcid.org/0000-0003-4289-4922>
 * Title: RELIANCE RO-Crate profile
 * Publisher: [RELIANCE project](https://reliance-project.eu/)
 * Version: [1.0]
+
+
 <!--- 
   Permalink: <https://w3id.org/workflowhub/workflow-ro-crate/1.0> (this version)  
   <https://w3id.org/workflowhub/workflow-ro-crate/> (latest version)
