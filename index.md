@@ -7,14 +7,14 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 * Authors:
   - Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
   - Esteban Gonzalez
-  - Daniel Garijo 
+  - Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
   - Raul Palma <https://orcid.org/0000-0003-4289-4922>
 * Title: RELIANCE RO-Crate profile
 * Publisher: [RELIANCE project](https://reliance-project.eu/)
 * Version: [1.0]
 
 
-<!--- 
+<!---
   Permalink: <https://w3id.org/workflowhub/workflow-ro-crate/1.0> (this version)  
   <https://w3id.org/workflowhub/workflow-ro-crate/> (latest version)
 
@@ -30,6 +30,7 @@ _RELIANCE RO-Crates_ are a specialization of [_RO-Crate_](https://researchobject
 
 RELIANCE project uses _RELIANCE RO-Crates_ as an exchange format to package data cubes in Earth Science.
 
+
 ## Concepts
 
 This section uses terminology from the [RO-Crate 1.1 specification](https://w3id.org/ro/crate/1.1).
@@ -40,26 +41,60 @@ The _Crate_ JSON-LD MUST be valid according to [RO-Crate 1.1](https://w3id.org/r
 
 ### Metadata File Descriptor
 
-The [Metadata File Descriptor](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor) `conformsTo` SHOULD be an array that contains at least <https://w3id.org/ro/crate/1.1> and <https://w3id.org/workflowhub/workflow-ro-crate/1.0>
+The [Metadata File Descriptor](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor) `conformsTo` SHOULD be an array that contains at least <https://w3id.org/ro/crate/1.1>.
 
+## RELIANCE RO-Crate Description
 
-### Main Workflow
+A RELIANCE RO-Crate MAY  include at least one Data Cube Data Entity, which MUST have the following properties:
 
-The _Crate_ MUST contain a data entity of type `["File", "SoftwareSourceCode", "ComputationalWorkflow"]` as the _Main Workflow_.
+- @type: MUST be ***DataCubeCollection*** or ***DataCubeProduct***.
+- @id: MUST be either a URI Path relative to the RO Crate root, or an absolute URI, which can point to a file with the data cube or to a Web service call that allows generating the data cube on demand.
 
-The _Crate_ MUST refer to the _Main Workflow_ via `mainEntity`.
+### DataCube Data Description
 
-The _Main Workflow_ MUST refer to its type via `programmingLanguage`.
+A DataCube Data Entity MAY include the following properties:
 
-**Tip**: See [RO-Crate specification on Workflows and Scripts](https://www.researchobject.org/ro-crate/1.1/workflows.html) for details.
+- @contentLocation: MUST be the id of a Contextual Entity of type Place.
+- @temporalCoverage: MUST be a temporal range specified as a period (e.g., 2011/2013).
+
+A DataCube Data Entity MUST include the following properties:
+
+- @reliance:spatialCoverage: MUST be the id of a Contextual Entity that identifies the spatial coverage in detail, including rel:extent (expressed as a WKT text), rel:spatial-step-resolution and rel:coordinate-reference-system.
+- @reliance:temporalCoverage: MUST be the id of a Contextual Entity that identifies the temporal coverage in detail, including rel:beginningTime (expressed as ISO8601), rel:endTime (expressed as ISO8601), rel:temporal-step-resolution and rel:temporal-reference-system-unit.  
+
+A DataCube Entity MAY include the following property:
+
+- @verticalCoverage: MUST be the id of a Contextual Entity that identifies the vertical coverage in detail, including rel:highestValue, rel:lowestValue, rel:vertical-step-resolution and rel:vertical-reference-system-unit.
+
+A DataCube Data Entity SHOULD include the properties:
+
+- sch:name
+- sch:description
+- sch:keywords (already discussed in the general layer for RO-Crate)
+- sch:contentSize  
+- sch:encodingFormat
+- sch:contactPoint
+
+A DataCube Data Entity MAY include the properties:
+- reliance:product-type
+- reliance:product-version
+- reliance:data-type
+- reliance:data-type-unit
+- reliance:processing-level
+- reliance:processor
+- reliance:instrument
+- reliance:platform
+- reliance:other-data-acquisition-system
+- reliance:dataquality
+- reliance:maxValue
+- reliance:minValue
+- reliance:maxDate
+- reliance:minDate
+- reliance:noDataValue
+- reliance:links-to-resources 
 
 ### Main Workflow CWL Description
 
-The _Crate_ COULD contain a data entity of type `["File", "SoftwareSourceCode", "HowTo"]` as the _Main Workflow CWL Description_. 
-
-A _Main Workflow CWL Description_ SHOULD have `https://w3id.org/workflowhub/workflow-ro-crate#cwl` as its `programmingLanguage` with a corresponding [contextual entity](#cwl).
-
-If _Main Workflow CWL Description_ is present, the _Main Workflow_ MUST refer to it the via `subjectOf`.
 
 ### Main Workflow Diagram
 
@@ -89,7 +124,7 @@ Conformance with the Bioschemas profile SHOULD be indicated with a `conformsTo` 
 
 ### File Format
 
-The Workflow RO-Crate MUST be zipped, and SHOULD have the file extension `.crate.zip` to be recognized by WorkflowHub. 
+The Workflow RO-Crate MUST be zipped, and SHOULD have the file extension `.crate.zip` to be recognized by WorkflowHub.
 
 The `ro-crate-metadata.json` file SHOULD be directly in the root of the zip archive, so that the whole Zip becomes the _RO-Crate Root_.
 
@@ -98,7 +133,7 @@ The `ro-crate-metadata.json` file SHOULD be directly in the root of the zip arch
 WorkflowHub will extract and expose the following properties from the Crate entity (`./`) in `ro-crate-metadata.json`:
 
 * `name` - This will be shown as the title of the workflow.
-* `description` - This will be shown as the description of the workflow. 
+* `description` - This will be shown as the description of the workflow.
 If it is not present, but a `README.md` file is available in the root of the crate, that will be rendered instead.
 * `author` - These will be shown as "creators" of the workflow.
 * `license` - See below.
